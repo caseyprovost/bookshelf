@@ -4,7 +4,6 @@ services:
     image: postgres
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
-
   api:
     env_file:
       - .env.dev
