@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'books#update', type: :request do
+RSpec.describe "books#update", type: :request do
   subject(:make_request) do
     jsonapi_put "/v1/books/#{book.id}", payload
   end
 
-  describe 'basic update' do
+  describe "basic update" do
     let!(:book) { create(:book) }
 
     let(:payload) do
       {
         data: {
           id: book.id.to_s,
-          type: 'books',
+          type: "books",
           attributes: {
             # ... your attrs here
           }
@@ -23,7 +23,7 @@ RSpec.describe 'books#update', type: :request do
     end
 
     # Replace 'xit' with 'it' after adding attributes
-    xit 'updates the resource' do
+    xit "updates the resource" do
       expect(BookResource).to receive(:find).and_call_original
       expect do
         make_request

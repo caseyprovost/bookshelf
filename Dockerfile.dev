@@ -12,6 +12,7 @@ RUN apk add --update --virtual runtime-deps postgresql-client nodejs libffi-dev 
 WORKDIR /tmp
 ADD Gemfile* ./
 
+RUN gem update --system
 RUN gem install bundler && gem update bundler
 
 RUN apk add --virtual build-deps build-base postgresql-dev libc-dev linux-headers libxml2-dev libxslt-dev readline-dev && \

@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'books#create', type: :request do
+RSpec.describe "books#create", type: :request do
   subject(:make_request) do
-    jsonapi_post '/v1/books', payload
+    jsonapi_post "/v1/books", payload
   end
 
-  describe 'basic create' do
+  describe "basic create" do
     let(:params) do
       attributes_for(:book)
     end
     let(:payload) do
       {
         data: {
-          type: 'books',
+          type: "books",
           attributes: params
         }
       }
     end
 
-    it 'works' do
+    it "works" do
       expect(BookResource).to receive(:build).and_call_original
       expect do
         make_request

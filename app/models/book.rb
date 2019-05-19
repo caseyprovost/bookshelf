@@ -6,7 +6,7 @@ class Book < ApplicationRecord
 
     OpenStruct.new(
       id: publisher_uuid,
-      name: 'testing'
+      name: "testing"
     )
   end
 
@@ -15,7 +15,7 @@ class Book < ApplicationRecord
 
     OpenStruct.new(
       id: author_uuid,
-      name: 'John Wick'
+      name: "John Wick"
     )
   end
 end

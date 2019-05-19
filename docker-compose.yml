@@ -13,7 +13,7 @@ services:
     command: bundle exec puma -C config/puma.rb
     volumes:
       - .:/myapp
-      - bundler_gems:/usr/local/bundle/
+      # - bundler_gems:/usr/local/bundle/
     ports:
       - "3000:3000"
     depends_on:
@@ -30,4 +30,3 @@ services:
 volumes:
   postgres:
   redis:
-  bundler_gems:

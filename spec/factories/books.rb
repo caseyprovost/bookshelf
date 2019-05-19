@@ -2,10 +2,10 @@
 
 FactoryBot.define do
   factory :book do
-    title { 'MyString' }
-    summary { 'MyText' }
+    title { "MyString" }
+    summary { "MyText" }
     page_count { 1 }
-    publication_date { '2019-05-13' }
+    publication_date { "2019-05-13" }
     publisher { nil }
     author { nil }
   end

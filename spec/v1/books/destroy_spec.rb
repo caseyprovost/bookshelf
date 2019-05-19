@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'books#destroy', type: :request do
+RSpec.describe "books#destroy", type: :request do
   subject(:make_request) do
     jsonapi_delete "/v1/books/#{book.id}"
   end
 
-  describe 'basic destroy' do
+  describe "basic destroy" do
     let!(:book) { create(:book) }
 
-    it 'updates the resource' do
+    it "updates the resource" do
       expect(BookResource).to receive(:find).and_call_original
       expect do
         make_request
@@ -18,7 +18,7 @@ RSpec.describe 'books#destroy', type: :request do
       end.to change { Book.count }.by(-1)
       expect { book.reload }
         .to raise_error(ActiveRecord::RecordNotFound)
-      expect(json).to eq('meta' => {})
+      expect(json).to eq("meta" => {})
     end
   end
 end

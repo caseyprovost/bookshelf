@@ -25,7 +25,7 @@ class ApplicationResource < Graphiti::Resource
   # scope path: ApplicationResource.endpoint_namespace do
   #   resources :posts
   # end
-  self.endpoint_namespace = '/v1'
+  self.endpoint_namespace = "/v1"
 
   # Will raise an error if a resource is being accessed from a URL it is not allowlisted for
   # Helpful for link validation

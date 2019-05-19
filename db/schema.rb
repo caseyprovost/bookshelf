@@ -14,20 +14,20 @@
 
 ActiveRecord::Schema.define(version: 20_190_514_010_913) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'books', force: :cascade do |t|
-    t.string 'title', null: false
-    t.text 'summary', null: false
-    t.integer 'page_count', default: 0, null: false
-    t.date 'publication_date'
-    t.uuid 'publisher_uuid', null: false
-    t.uuid 'author_uuid', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['author_uuid'], name: 'index_books_on_author_uuid'
-    t.index ['publication_date'], name: 'index_books_on_publication_date'
-    t.index ['publisher_uuid'], name: 'index_books_on_publisher_uuid'
-    t.index ['title'], name: 'index_books_on_title'
+  create_table "books", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "summary", null: false
+    t.integer "page_count", default: 0, null: false
+    t.date "publication_date"
+    t.uuid "publisher_uuid", null: false
+    t.uuid "author_uuid", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_uuid"], name: "index_books_on_author_uuid"
+    t.index ["publication_date"], name: "index_books_on_publication_date"
+    t.index ["publisher_uuid"], name: "index_books_on_publisher_uuid"
+    t.index ["title"], name: "index_books_on_title"
   end
 end
