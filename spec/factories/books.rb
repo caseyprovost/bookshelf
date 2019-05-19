@@ -2,11 +2,11 @@
 
 FactoryBot.define do
   factory :book do
-    title { "MyString" }
-    summary { "MyText" }
-    page_count { 1 }
+    sequence(:title) { |i| "#{Faker::Movies::HarryPotter.spell}-#{i}" }
+    summary { Faker::Movies::HarryPotter.quote }
+    page_count { Faker::Number.number(3) }
     publication_date { "2019-05-13" }
-    publisher { nil }
-    author { nil }
+    publisher_uuid { SecureRandom.uuid }
+    author_uuid { SecureRandom.uuid }
   end
 end
