@@ -3,6 +3,8 @@
 require "rails_helper"
 
 RSpec.describe "books#create", type: :request do
+  before { stub_publisher_service! }
+
   subject(:make_request) do
     jsonapi_post "/v1/books", payload
   end

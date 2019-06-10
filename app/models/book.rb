@@ -6,6 +6,10 @@ class Book < ApplicationRecord
     Publisher.find(publisher_uuid)
   end
 
+  def publisher_id
+    publisher_uuid
+  end
+
   def author
     return nil unless author_uuid.present?
 
