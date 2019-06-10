@@ -4,10 +4,7 @@ class Book < ApplicationRecord
   def publisher
     return nil unless publisher_uuid.present?
 
-    OpenStruct.new(
-      id: publisher_uuid,
-      name: "testing"
-    )
+    Publisher.find(publisher_uuid)
   end
 
   def author
