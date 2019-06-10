@@ -32,5 +32,5 @@ class ApplicationResource < Graphiti::Resource
   self.validate_endpoints = true
 
   # Automatically generate JSONAPI links?
-  self.autolink = true
+  self.autolink = false
 end
