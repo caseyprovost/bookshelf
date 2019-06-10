@@ -3,7 +3,6 @@
 class Book < ApplicationRecord
   def publisher
     return nil unless publisher_uuid.present?
-
     Publisher.find(publisher_uuid)
   end
 
