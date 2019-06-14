@@ -14,3 +14,12 @@ Graphiti::Types[:publisher] = {
   description: 'A publisher object from the PublisherRegistry'
 }
 
+Graphiti::Types[:author] = {
+  params: type,
+  read: type,
+  write: type,
+  kind: 'record',
+  canonical_name: :author,
+  description: 'An author object from the AuthorRegistry'
+}
+
