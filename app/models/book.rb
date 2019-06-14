@@ -10,12 +10,12 @@ class Book < ApplicationRecord
     publisher_uuid
   end
 
+  def author_id
+    author_uuid
+  end
+
   def author
     return nil unless author_uuid.present?
-
-    OpenStruct.new(
-      id: author_uuid,
-      name: "John Wick"
-    )
+    Author.find(author_uuid).first
   end
 end
