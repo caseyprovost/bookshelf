@@ -7,8 +7,6 @@ class BookResource < ApplicationResource
   attribute :publication_date, :date
   attribute :publisher_uuid, :uuid
   attribute :author_uuid, :uuid
-  attribute :publisher, :publisher, writable: false
-  attribute :author, :author, writable: false
   attribute :created_at, :datetime, writable: false
   attribute :updated_at, :datetime, writable: false
 end

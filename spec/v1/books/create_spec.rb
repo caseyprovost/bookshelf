@@ -3,16 +3,13 @@
 require "rails_helper"
 
 RSpec.describe "books#create", type: :request do
-  before { stub_publisher_service! }
-
-  subject(:make_request) do
-    jsonapi_post "/v1/books", payload
-  end
+  subject(:make_request) { jsonapi_post "/v1/books", payload }
 
   describe "basic create" do
     let(:params) do
       attributes_for(:book)
     end
+
     let(:payload) do
       {
         data: {

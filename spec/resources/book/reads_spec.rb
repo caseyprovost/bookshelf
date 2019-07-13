@@ -3,7 +3,6 @@
 require "rails_helper"
 
 RSpec.describe BookResource, type: :resource do
-  before { stub_publisher_service! }
 
   describe "serialization" do
     let!(:book) { create(:book) }

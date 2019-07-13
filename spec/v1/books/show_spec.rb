@@ -3,7 +3,6 @@
 require "rails_helper"
 
 RSpec.describe "books#show", type: :request do
-  before { stub_publisher_service! }
   let(:params) { {} }
 
   subject(:make_request) do
