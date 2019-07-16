@@ -3,7 +3,6 @@
 require "rails_helper"
 
 RSpec.describe BookResource, type: :resource do
-
   describe "serialization" do
     let!(:book) { create(:book) }
 
@@ -21,7 +20,7 @@ RSpec.describe BookResource, type: :resource do
 
     context "by id" do
       before do
-        params[:filter] = { id: { eq: book2.id } }
+        params[:filter] = {id: {eq: book2.id}}
       end
 
       it "works" do
@@ -44,9 +43,9 @@ RSpec.describe BookResource, type: :resource do
         it "works" do
           render
           expect(d.map(&:id)).to eq([
-                                      book1.id,
-                                      book2.id
-                                    ])
+            book1.id,
+            book2.id,
+          ])
         end
       end
 
@@ -58,9 +57,9 @@ RSpec.describe BookResource, type: :resource do
         it "works" do
           render
           expect(d.map(&:id)).to eq([
-                                      book2.id,
-                                      book1.id
-                                    ])
+            book2.id,
+            book1.id,
+          ])
         end
       end
     end

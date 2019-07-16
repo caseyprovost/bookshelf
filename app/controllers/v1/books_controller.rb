@@ -36,7 +36,7 @@ module V1
       book = BookResource.find(params)
 
       if book.destroy
-        render jsonapi: { meta: {} }, status: 200
+        render jsonapi: {meta: {}}, status: 200
       else
         render jsonapi_errors: book
       end

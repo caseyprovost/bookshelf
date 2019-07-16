@@ -8,8 +8,8 @@ RSpec.describe BookResource, type: :resource do
       {
         data: {
           type: "books",
-          attributes: attributes_for(:book)
-        }
+          attributes: attributes_for(:book),
+        },
       }
     end
 
@@ -18,9 +18,9 @@ RSpec.describe BookResource, type: :resource do
     end
 
     it "works" do
-      expect do
+      expect {
         expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
-      end.to change { Book.count }.by(1)
+      }.to change { Book.count }.by(1)
     end
   end
 
@@ -32,8 +32,8 @@ RSpec.describe BookResource, type: :resource do
         data: {
           id: book.id.to_s,
           type: "books",
-          attributes: {} # Todo!
-        }
+          attributes: {}, # Todo!
+        },
       }
     end
 
@@ -42,9 +42,9 @@ RSpec.describe BookResource, type: :resource do
     end
 
     xit "works (add some attributes and enable this spec)" do
-      expect do
+      expect {
         expect(instance.update_attributes).to eq(true)
-      end.to change { book.reload.updated_at }
+      }.to change { book.reload.updated_at }
       # .and change { book.foo }.to('bar') <- example
     end
   end
@@ -57,9 +57,9 @@ RSpec.describe BookResource, type: :resource do
     end
 
     it "works" do
-      expect do
+      expect {
         expect(instance.destroy).to eq(true)
-      end.to change { Book.count }.by(-1)
+      }.to change { Book.count }.by(-1)
     end
   end
 end

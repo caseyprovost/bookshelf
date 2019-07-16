@@ -10,7 +10,7 @@ class ApplicationController < ActionController::API
 
   private
 
-    def handle_exception(exception)
-      raise exception
-    end
+  def handle_exception(exception)
+    raise exception
+  end
 end
