@@ -34,8 +34,7 @@ group :development, :test do
   gem "graphiti_spec_helpers"
   gem "pry"
   gem "pry-byebug"
-  gem "rubocop"
-  gem "rubocop-performance"
+  gem "standard"
 end
 
 group :development do
