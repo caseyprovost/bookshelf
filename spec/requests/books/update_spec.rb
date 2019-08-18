@@ -16,7 +16,7 @@ RSpec.describe "books#update", type: :request do
           id: book.id.to_s,
           type: "books",
           attributes: {
-            # ... your attrs here
+            title: "testing",
           },
         },
       }
@@ -25,10 +25,8 @@ RSpec.describe "books#update", type: :request do
     # Replace 'xit' with 'it' after adding attributes
     xit "updates the resource" do
       expect(BookResource).to receive(:find).and_call_original
-      expect {
-        make_request
-        expect(response.status).to eq(200), response.body
-      }.to change { book.reload.attributes }
+      expect(make_request).to be_successful
+      expect(book.reload.title).to eq("testing")
     end
   end
 end

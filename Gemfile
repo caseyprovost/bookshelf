@@ -3,10 +3,10 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.6.2"
+ruby "2.6.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 6.0.0.rc1"
+gem "rails", "~> 6.0.0"
 # Use postgresql as the database for Active Record
 gem "pg", ">= 0.18", "< 2.0"
 # Use Puma as the app server
@@ -25,12 +25,7 @@ gem "factory_bot_rails"
 gem "faker"
 gem "json_api_client"
 
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
-
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem "database_cleaner"
   gem "graphiti_spec_helpers"
   gem "pry"
   gem "pry-byebug"
@@ -46,7 +41,7 @@ group :development do
 end
 
 group :test do
-  gem "rspec-rails", "~> 3.8"
+  gem "rspec-rails", "~> 4.0.0.beta2"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

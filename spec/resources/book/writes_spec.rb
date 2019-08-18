@@ -32,7 +32,9 @@ RSpec.describe BookResource, type: :resource do
         data: {
           id: book.id.to_s,
           type: "books",
-          attributes: {}, # Todo!
+          attributes: {
+            "title": "Robinhood",
+          },
         },
       }
     end
@@ -41,11 +43,9 @@ RSpec.describe BookResource, type: :resource do
       BookResource.find(payload)
     end
 
-    xit "works (add some attributes and enable this spec)" do
-      expect {
-        expect(instance.update_attributes).to eq(true)
-      }.to change { book.reload.updated_at }
-      # .and change { book.foo }.to('bar') <- example
+    it "works" do
+      expect(instance.update_attributes).to eq(true)
+      expect(book.reload.title).to eq("Robinhood")
     end
   end
 
@@ -57,9 +57,8 @@ RSpec.describe BookResource, type: :resource do
     end
 
     it "works" do
-      expect {
-        expect(instance.destroy).to eq(true)
-      }.to change { Book.count }.by(-1)
+      expect(instance.destroy).to eq(true)
+      expect { book.reload }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end
