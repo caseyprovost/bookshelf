@@ -24,6 +24,7 @@ gem "versionist"
 gem "factory_bot_rails"
 gem "faker"
 gem "json_api_client"
+gem "vandal_ui"
 
 group :development, :test do
   gem "graphiti_spec_helpers"
